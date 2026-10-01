@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../register.css";
 
-import { updateRegisterData } from "../storage";   // ★ 使用 storage.js 工具
+import { updateRegisterData } from "../storage";   
 
 export default function EmailPage() {
     const [email, setEmail] = useState("");
@@ -14,22 +14,22 @@ export default function EmailPage() {
     function handleNext() {
         setError("");
 
-        // 1️⃣ 驗證 email 是否一致
+        //  驗證 email 是否一致
         if (email !== email2) {
             setError("兩次輸入的 Email 不一致");
             return;
         }
 
-        // 2️⃣ 驗證 email 格式
+        //  驗證 email 格式
         if (!email.includes("@") || !email.includes(".")) {
             setError("Email 格式不正確");
             return;
         }
 
-        // 3️⃣ 儲存 email 到 localStorage
+        //  儲存 email 到 localStorage
         updateRegisterData({ email });
 
-        // 4️⃣ 前往下一頁
+        //  前往下一頁
         navigate("/password");
     }
 
