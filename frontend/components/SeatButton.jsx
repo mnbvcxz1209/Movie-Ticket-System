@@ -1,5 +1,5 @@
 import React from "react";
-import "./SeatButton.css";   // ★ 加上獨立 CSS
+import "./SeatButton.css";   
 
 export default function SeatButton({ label, isSold, isSelected, onClick }) {
 
