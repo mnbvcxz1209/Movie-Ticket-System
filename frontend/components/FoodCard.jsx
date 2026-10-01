@@ -6,7 +6,7 @@ export default function FoodCard({ food, isSelected, onClick }) {
         ? "border-purple-600 bg-purple-50"
         : "border-gray-300 hover:border-purple-300";
 
-    // 如果後端給的是 picURL = "F001.jpg"，就自動補上完整路徑
+    
     const imagePath = food.picURL?.startsWith("/images/")
         ? food.picURL
         : `/images/foods/${food.picURL}`;
