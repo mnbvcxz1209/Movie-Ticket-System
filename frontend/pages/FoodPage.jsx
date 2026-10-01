@@ -10,7 +10,7 @@ export default function FoodPage() {
         setCurrentStep
     } = useBooking();
 
-    // ★★★ 從後端讀取資料
+    
     useEffect(() => {
         fetch("http://localhost:5001/foods")
             .then(res => res.json())
