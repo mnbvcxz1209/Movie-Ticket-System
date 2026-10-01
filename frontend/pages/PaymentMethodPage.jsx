@@ -20,7 +20,7 @@ export default function PaymentMethodPage() {
         setPayID(selected);
         setPayMethod(selected === 1 ? "online" : "counter");
 
-        setCurrentStep("pay");  // ★ 進入 PayPage
+        setCurrentStep("pay");  //  進入 PayPage
     };
 
     return (
