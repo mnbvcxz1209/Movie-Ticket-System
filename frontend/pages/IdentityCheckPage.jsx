@@ -8,7 +8,7 @@ export default function IdentityCheckPage() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    // ⭐⭐⭐ 每次進入這頁時，清空所有註冊資料
+    //  每次進入這頁時，清空所有註冊資料
     useEffect(() => {
         clearRegisterData();
     }, []);
@@ -21,7 +21,7 @@ export default function IdentityCheckPage() {
             return;
         }
 
-        // 呼叫後端 /id-check
+        //  /id-check
         const res = await fetch("http://localhost:5001/id-check", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -34,8 +34,7 @@ export default function IdentityCheckPage() {
             setError("此身分證字號已註冊");
             return;
         }
-
-        // ✨ 寫入 localStorage
+        //  寫入 localStorage
         updateRegisterData({ memID: idNumber });
 
         // 跳下一步
