@@ -3,18 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import bcrypt
 
-# from db import (   # ← 完全註解掉資料庫
-#     get_connection,
-#     TABLE_MEMBERS,
-#     COL_ID_NUMBER,
-#     COL_NAME,
-#     COL_BIRTHDAY,
-#     COL_PHONE,
-#     COL_EMAIL,
-#     COL_PASSWORD_HASH,
-#     COL_SEC_Q,
-#     COL_SEC_A,
-# )
+
 
 app = FastAPI()
 
