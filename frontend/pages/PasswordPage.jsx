@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../register.css";
 
-import { updateRegisterData } from "../storage";   // ★ 重要：使用 storage 工具
+import { updateRegisterData } from "../storage";   
 
 export default function PasswordPage() {
     const [pw, setPw] = useState("");
@@ -14,22 +14,22 @@ export default function PasswordPage() {
     function handleNext() {
         setError("");
 
-        // 1️⃣ 密碼格式簡單檢查（至少 8 位）
+        // 1️ 密碼格式簡單檢查（至少 8 位）
         if (pw.length < 8) {
             setError("密碼至少需要 8 個字元");
             return;
         }
 
-        // 2️⃣ 驗證兩次輸入是否一致
+        //  驗證兩次輸入是否一致
         if (pw !== pw2) {
             setError("兩次輸入的密碼不一致");
             return;
         }
 
-        // 3️⃣ 將密碼寫入 localStorage
+        //  將密碼寫入 localStorage
         updateRegisterData({ password: pw });
 
-        // 4️⃣ 進入下一頁（安全問題）
+        //  進入下一頁（安全問題）
         navigate("/security");
     }
 
