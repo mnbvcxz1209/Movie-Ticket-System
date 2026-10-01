@@ -1,0 +1,72 @@
+/* --------------- 全域設定 ---------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* --------------- 外框容器 ---------------- */
+.page-container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------- 標題 ---------------- */
+.page-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* --------------- label + input ---------------- */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.input-label {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.input-box {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.input-box.error {
+  border-color: red;
+}
+
+/* --------------- 按鈕 ---------------- */
+.button {
+  background-color: #0078ff;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #005fcc;
+}
+
+/* --------------- 錯誤訊息 ---------------- */
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}

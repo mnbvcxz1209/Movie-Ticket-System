@@ -1,0 +1,117 @@
+/* === Container === */
+.form-container {
+    width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.form-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Input Label */
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Input Box */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.form-input:focus {
+    border-color: #0066ff;
+    outline: none;
+}
+
+.input-error {
+    border-color: red !important;
+}
+
+/* Error Text */
+.error-text {
+    color: red;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Button */
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background: #0066ff;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+.form-button:hover {
+    background: #0048cc;
+}
+
+/* Terms button */
+.terms-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.success-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.back-home-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-home-btn:hover {
+    background-color: #5c37d6;
+}
+
+/* 讓所有頁面完全置中 */
+.page-center {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* 左右置中 */
+    align-items: center;
+    /* 上下置中 */
+    background: #f5f7fa;
+    /* 背景可改 */
+    padding: 20px;
+    box-sizing: border-box;
+}
