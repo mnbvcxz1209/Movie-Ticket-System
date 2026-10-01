@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-# ★★★ 必須允許所有 API（含 /orders） ★★★
+
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # ====================================================================
@@ -47,7 +47,7 @@ def api_login():
         conn = get_db()
         cursor = conn.cursor(dictionary=True)
 
-        # ★ 正確欄位：pwd，而不是 password
+        
         cursor.execute("SELECT memID, pwd FROM member WHERE memID=%s", (memID,))
         row = cursor.fetchone()
 
@@ -109,7 +109,7 @@ def forgetpwd_check():
     if row and row["answer"] == answer:
         return jsonify({"success": True})
     else:
-        return jsonify({"success": False, "msg": "密保回答錯誤"})
+        return jsonify({"success": False, "msg": "回答錯誤"})
 
 
 # ====================================================================
@@ -421,9 +421,9 @@ def create_order():
     quantity = data.get("quantity")
     foods = data.get("foods", [])
     seats = data.get("seats", [])
-    pay_id = data.get("payID")   # ★ 新增：付款方式
+    pay_id = data.get("payID")   
 
-    # ★ 必填欄位檢查（包含 payID）
+    # 必填欄位檢查（包含 payID）
     if not (mem_id and show_id and ticket_id and quantity and seats and pay_id):
         return jsonify({"success": False, "message": "缺少必要欄位"}), 400
 
@@ -482,7 +482,7 @@ def create_order():
                 VALUES (%s, %s, %s)
             """, (order_id, show_id, seatID))
 
-        # ====== 顯示格式座位（SE001 → A1） ======
+        # ====== 顯示格式座位 ======
         seat_display = []
         for seatID in seats:
             cursor.execute("SELECT rowLabel, col FROM seats WHERE seatID=%s", (seatID,))
@@ -598,7 +598,7 @@ def get_one_movie():
     cursor.close()
     conn.close()
 
-    # ★★★ 重要：把 datetime/time/timedelta 全部轉字串 ★★★
+    
     from datetime import datetime, date, time, timedelta
 
     for key in row:
@@ -761,7 +761,7 @@ def get_orders():
     conn = get_db()
     cursor = conn.cursor(dictionary=True)
 
-    # ★ 主要訂單資料（不再使用 o.seatID）
+    #  主要訂單資料
     sql = """
         SELECT 
             o.orderID,
@@ -797,7 +797,7 @@ def get_orders():
     for order in orders:
         orderID = order["orderID"]
 
-        # ⭐ 修正：轉成可序列化
+       
         for key in order:
             order[key] = safe_convert(order[key])
 
@@ -820,7 +820,7 @@ def get_orders():
 
         seat_rows = cursor.fetchall()
 
-        # 轉換成 A1、B3 這種格式
+       
         order["seats"] = [
             f"{row['rowLabel']}{row['col']}"
             for row in seat_rows
