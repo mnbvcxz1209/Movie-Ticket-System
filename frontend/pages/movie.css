@@ -1,0 +1,61 @@
+/* ============ 電影列表 ============ */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 20px;
+}
+
+.movie-card {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 150px;
+  aspect-ratio: 2 / 3;
+  /* 自動保持 2:3 比例（海報標準） */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ============ 電影詳細 ============ */
+.movie-detail {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+.poster-box img {
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.multiline {
+  white-space: pre-line;
+  /* ← 這行讓 \n 自動換行 */
+  line-height: 1.6;
+  /* 讓行距更舒服 */
+  margin-top: 10px;
+}
+
+.section-title {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* 讓卡片更美觀 */
+.movie-card {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
