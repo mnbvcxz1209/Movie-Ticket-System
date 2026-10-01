@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SeatButton from "../components/SeatButton";
 import { useBooking } from "../context/BookingContext";
-import "./SeatPage.css"; // ★ 新增
+import "./SeatPage.css"; 
 
 export default function SeatPage() {
 
