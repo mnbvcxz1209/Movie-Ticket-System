@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../register.css";
 
-import { updateRegisterData } from "../storage";   // ★ 使用 storage.js
+import { updateRegisterData } from "../storage";  
 
 export default function BasicInfoPage() {
     const [name, setName] = useState("");
@@ -32,7 +32,7 @@ export default function BasicInfoPage() {
         const lastName = name[0];
         const firstName = name.substring(1);
 
-        // 儲存到 localStorage（不打 API）
+        
         updateRegisterData({
             lastName,
             firstName,
