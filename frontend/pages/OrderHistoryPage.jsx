@@ -8,14 +8,14 @@ export default function OrderHistoryPage() {
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
 
-    // ★★★ 未登入 → 強制跳到登入頁
+    //  未登入 → 強制跳到登入頁
     useEffect(() => {
         if (!username) {
             navigate("/login");
         }
     }, [username, navigate]);
 
-    // ★★★ 登入後抓訂單資料
+    //  登入後抓訂單資料
     useEffect(() => {
         if (!username) return;
 
@@ -28,7 +28,7 @@ export default function OrderHistoryPage() {
             });
     }, [username]);
 
-    // ★★★ 取消訂單
+    //  取消訂單
     function handleCancel(id) {
         if (!window.confirm("確定要取消這筆訂單嗎？")) return;
 
