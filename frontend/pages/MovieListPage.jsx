@@ -37,7 +37,7 @@ export default function MovieListPage() {
             </div>
 
             {/* 即將上映 */}
-            <h2 className="section-title">⏳ 即將上映</h2>
+            <h2 className="section-title"> 即將上映</h2>
             <div className="movie-grid">
                 {comingSoon.map(m => (
                     <Link to={`/movie/${m.movieID}`} key={m.movieID} className="movie-card">
