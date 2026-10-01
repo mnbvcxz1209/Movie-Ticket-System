@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000"; // 你的 Flask port
+const BASE_URL = "http://localhost:"; 
 
 export async function register(data) {
     const res = await fetch(`${BASE_URL}/register`, {
