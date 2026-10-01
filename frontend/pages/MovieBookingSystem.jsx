@@ -49,6 +49,6 @@ function AppContent() {
 }
 
 export default function MovieBookingSystem() {
-    return <AppContent />;   // ★ 不要再包 BookingProvider !!
+    return <AppContent />;   
 }
 
