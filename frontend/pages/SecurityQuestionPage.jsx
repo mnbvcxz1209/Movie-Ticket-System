@@ -19,13 +19,13 @@ export default function SecurityQuestionPage() {
             return;
         }
 
-        // 1️⃣ 更新 localStorage：安全問題
+        //  更新 localStorage
         updateRegisterData({
             security_question: question,
             security_answer: answer
         });
 
-        // 2️⃣ 取得全部註冊資料
+        //  取得全部註冊資料
         const data = getRegisterData();
         console.log("前端送出的 data:", data);
         if (!data.memID) {
@@ -34,7 +34,7 @@ export default function SecurityQuestionPage() {
         }
 
         try {
-            // 3️⃣ 呼叫後端：一次性 /register
+            //  呼叫後端： /register
             const res = await fetch("http://localhost:5001/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
