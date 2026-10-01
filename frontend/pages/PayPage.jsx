@@ -18,7 +18,7 @@ export default function PayPage() {
         foodList,
         selectedFoods,
 
-        orderInfo, setOrderInfo,   // ★★ 這兩個一定要拿到！
+        orderInfo, setOrderInfo,   
         setCurrentStep
     } = useBooking();
 
@@ -28,7 +28,7 @@ export default function PayPage() {
     const [showInfo, setShowInfo] = useState({ date: "", time: "" });
     const [ticketInfo, setTicketInfo] = useState({ name: "", price: 0 });
 
-    // ★ 用來將 SE001 → A1（後端提供所有座位的資料）
+    //  用來將 SE001 → A1（後端提供所有座位的資料）
     const [seatDetailList, setSeatDetailList] = useState([]);
 
     // 從後端取得所有座位資料，用來轉換座位顯示
@@ -108,7 +108,7 @@ export default function PayPage() {
     }[payMethod] || "未選擇";
 
     // ======================================================
-    // ★ 建立訂單並前往完成頁面
+    //  建立訂單並前往完成頁面
     // ======================================================
     async function submitOrder() {
 
@@ -139,7 +139,7 @@ export default function PayPage() {
                 return;
             }
 
-            // ★ 訂單成功 → 儲存資料並跳轉
+            //  訂單成功 → 儲存資料並跳轉
             setOrderInfo(data);
             setCurrentStep("success");
 
