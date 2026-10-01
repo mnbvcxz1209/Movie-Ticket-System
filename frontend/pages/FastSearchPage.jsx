@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./FastSearchPage.css";  // 若無 CSS 會正常顯示，只是比較素
+import "./FastSearchPage.css"; 
 export default function FastSearchPage() {
 
     const [mode, setMode] = useState(""); // "cinema" / "movie"
@@ -22,7 +22,7 @@ export default function FastSearchPage() {
     }, []);
 
     // ---------------------------------------------------
-    // 取得所有電影（不依影城）
+    // 取得所有電影
     // ---------------------------------------------------
     useEffect(() => {
         fetch("http://localhost:5001/movies-all")
@@ -31,7 +31,7 @@ export default function FastSearchPage() {
     }, []);
 
     // ---------------------------------------------------
-    // 影城模式 → 顯示該影城正在上映的電影
+    // 影城模式 顯示該影城正在上映的電影
     // ---------------------------------------------------
     useEffect(() => {
         if (mode !== "cinema" || !selectedCinema) return;
@@ -43,7 +43,7 @@ export default function FastSearchPage() {
     }, [mode, selectedCinema]);
 
     // ---------------------------------------------------
-    // 電影模式 → 使用 /movie-cinema 取得上映影城 + 場次
+    // 電影模式 使用 /movie-cinema 取得上映影城 + 場次
     // ---------------------------------------------------
     useEffect(() => {
         if (mode !== "movie" || !selectedMovie) return;
@@ -61,7 +61,7 @@ export default function FastSearchPage() {
         <div className="fast-search-page">
 
             <div className="search-card">
-                <h2 className="title">🎬 快速搜尋</h2>
+                <h2 className="title"> 快速搜尋</h2>
 
                 {/* 搜尋模式 */}
                 <div className="mode-select">
@@ -154,7 +154,7 @@ export default function FastSearchPage() {
 
                                 {movieCinemaData.map((item, idx) => (
                                     <div className="cinema-item" key={idx}>
-                                        <strong>📍 {item.cinema}</strong>
+                                        <strong> {item.cinema}</strong>
                                         <ul>
                                             {item.times.map((t, j) => (
                                                 <li key={j}>
