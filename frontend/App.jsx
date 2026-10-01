@@ -34,13 +34,13 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* ⭐ 主頁（兩個按鈕） */}
+        {/*  主頁（兩個按鈕） */}
         <Route path="/" element={<HomePage />} />
-        {/* ⭐ 登錄系統 */}
+        {/*  登錄系統 */}
         <Route path="/login" element={<LoginPage />} />
-        {/* ⭐ 修改會員資料系統 */}
+        {/*  修改會員資料系統 */}
         <Route path="/modify-member" element={<ModifyProfilePage />} />
-        {/* ⭐ 註冊流程（不使用 /register prefix）*/}
+        {/*  註冊流程*/}
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/id-check" element={<IdentityCheckPage />} />
         <Route path="/basicinfo" element={<BasicInfoPage />} />
@@ -49,13 +49,13 @@ export default function App() {
         <Route path="/security" element={<SecurityQuestionPage />} />
         <Route path="/success" element={<SuccessPage />} />
 
-        {/* ⭐ 訂票系統 */}
+        {/*  訂票系統 */}
         <Route path="/booking" element={<MovieBookingSystem />} />
-        {/* ⭐ 快速搜尋系統 */}
+        {/*  快速搜尋系統 */}
         <Route path="/fast-search" element={<FastSearchPage />} />
-        {/* ⭐ 查看訂單紀錄 */}
+        {/*  查看訂單紀錄 */}
         <Route path="/orders" element={<OrderHistoryPage />} />
-        {/* ★ 被保護的訂票流程 */}
+        {/*訂票流程 */}
         <Route
           path="/booking"
           element={
