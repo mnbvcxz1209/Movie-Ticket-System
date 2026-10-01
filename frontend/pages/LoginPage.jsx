@@ -17,13 +17,13 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // ✅ 按下登入按鈕
+    //  按下登入按鈕
     const handleLogin = async () => {
         const result = await login();
 
         if (!result) return;
 
-        // ★ 保險：如果 login 回傳 memID → 再寫一次
+        
         if (result.memID) setUsername(result.memID);
 
         navigate("/");  // 成功後回首頁
