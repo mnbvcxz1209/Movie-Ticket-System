@@ -1,0 +1,30 @@
+.seat-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: white;
+    /* 可選座位 - 白底 */
+}
+
+/* 已售出 */
+.seat-btn.sold {
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* 已選座位 */
+.seat-btn.selected {
+    background-color: #007bff;
+    /* 藍色 */
+    color: white;
+}
+
+/* 滑過可選 */
+.seat-btn:hover:not(.sold):not(.selected) {
+    background-color: #f0f0f0;
+}
